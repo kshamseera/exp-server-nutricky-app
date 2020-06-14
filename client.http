@@ -1,0 +1,51 @@
+
+//getting  calorie details 
+###
+GET http://localhost:3030/calories HTTP/1.1
+
+//getting  calorie details by name
+###
+GET http://localhost:3030/calories?user=Nahar HTTP/1.1
+
+//getting the calorie details by id
+###
+GET http://localhost:3030/calories/5ecf1ff5c72d76fb3c608d67 HTTP/1.1
+
+
+//Create new calorie details
+###
+POST http://localhost:3030/calories HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Nahar",
+    "create_date": "2020-06-14",
+    "calorie_amount_bf": 250,
+    "calorie_amount_lunch": 300,
+    "calorie_amount_dinner": 450,
+    "calorie_goal": 1600
+}
+
+
+//update the calorie details with id
+###
+PUT  http://localhost:3030/calories/5ecf1ff5c72d76fb3c608d66 HTTP/1.1
+content-type: application/json
+
+{
+    "username": "shamseera",
+    "create_date": "2001-11-30",
+    "calorie_amount_bf": 250,
+    "calorie_amount_lunch": 300,
+    "calorie_amount_dinner": 450,
+    "calorie_goal": 1300
+}
+
+//Delete the calorie details by id
+###
+DELETE http://localhost:3030/calories/5ed05f76fd0ed16e959b58f4 HTTP/1.1
+
+
+// get the total,goal and difference of calories
+###
+GET http://localhost:3030/calories?user=mia&date=2019-05-29 HTTP/1.1
